@@ -1,0 +1,18 @@
+{
+  "name": "taskflow-app",
+  "version": "1.0.0",
+  "description": "Aplikasi web produktivitas sederhana untuk mengelola tugas harian.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "test": "node --test",
+    "check": "node --check app.js && node --check tests/app.test.mjs"
+  },
+  "keywords": [
+    "task",
+    "productivity",
+    "web-app"
+  ],
+  "author": "",
+  "license": "MIT"
+}

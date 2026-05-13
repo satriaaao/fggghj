@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TaskFlow adalah aplikasi web sederhana untuk mencatat, memprioritaskan, dan menuntaskan tugas harian."
+    />
+    <title>TaskFlow - Aplikasi Tugas Harian</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="app-title">
+        <div>
+          <p class="eyebrow">Produktivitas harian</p>
+          <h1 id="app-title">TaskFlow</h1>
+          <p class="hero-copy">
+            Atur pekerjaan, tandai prioritas, dan pantau progres harian dalam satu aplikasi ringan.
+          </p>
+        </div>
+        <div class="hero-card" aria-label="Ringkasan tugas">
+          <span class="metric" id="completion-rate">0%</span>
+          <span class="metric-label">tugas selesai</span>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="form-title">
+        <div class="section-heading">
+          <h2 id="form-title">Tambah tugas baru</h2>
+          <p>Isi detail tugas, pilih prioritas, lalu simpan ke daftar hari ini.</p>
+        </div>
+        <form id="task-form" class="task-form">
+          <label>
+            Nama tugas
+            <input
+              id="task-title"
+              name="title"
+              type="text"
+              maxlength="80"
+              placeholder="Contoh: Kirim proposal klien"
+              required
+            />
+          </label>
+          <label>
+            Prioritas
+            <select id="task-priority" name="priority">
+              <option value="high">Tinggi</option>
+              <option value="medium" selected>Sedang</option>
+              <option value="low">Rendah</option>
+            </select>
+          </label>
+          <button type="submit">Tambah tugas</button>
+        </form>
+      </section>
+
+      <section class="stats-grid" aria-label="Statistik tugas">
+        <article class="stat-card">
+          <span id="total-count">0</span>
+          <p>Total tugas</p>
+        </article>
+        <article class="stat-card">
+          <span id="active-count">0</span>
+          <p>Belum selesai</p>
+        </article>
+        <article class="stat-card">
+          <span id="done-count">0</span>
+          <p>Selesai</p>
+        </article>
+      </section>
+
+      <section class="panel" aria-labelledby="list-title">
+        <div class="section-heading row-heading">
+          <div>
+            <h2 id="list-title">Daftar tugas</h2>
+            <p>Centang tugas saat selesai atau hapus jika sudah tidak diperlukan.</p>
+          </div>
+          <button id="clear-done" class="ghost-button" type="button">Bersihkan selesai</button>
+        </div>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        <p id="empty-state" class="empty-state">Belum ada tugas. Tambahkan tugas pertama kamu.</p>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
